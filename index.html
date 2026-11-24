@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1a1033">
+  <meta name="description" content="Générateur de mots aléatoires et de consignes d'écriture pour la poésie et les textes">
+  <title>Muse Aléatoire — mots et consignes d'écriture</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="entete">
+      <h1>✒️ Muse Aléatoire</h1>
+      <p class="sous-titre">Des mots et une consigne au hasard, pour débloquer ta plume</p>
+    </header>
+
+    <section class="carte-consigne" aria-live="polite">
+      <div id="chargement" class="chargement">Appuie sur le bouton pour tirer ta première consigne…</div>
+      <div id="resultat" class="resultat" hidden>
+        <p id="phrase-consigne" class="phrase-consigne"></p>
+        <div class="details">
+          <div class="detail">
+            <span class="etiquette">Forme</span>
+            <span id="detail-forme" class="valeur"></span>
+          </div>
+          <div class="detail">
+            <span class="etiquette">Contrainte</span>
+            <span id="detail-contrainte" class="valeur"></span>
+          </div>
+          <div class="detail" id="bloc-theme">
+            <span class="etiquette">Thème</span>
+            <span id="detail-theme" class="valeur"></span>
+          </div>
+          <div class="detail">
+            <span class="etiquette">Mots imposés</span>
+            <span id="detail-mots" class="chips"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="actions">
+      <button id="btn-generer" class="bouton-principal">🎲 Générer une consigne</button>
+      <div class="actions-secondaires">
+        <button id="btn-mots" class="bouton-secondaire" hidden>🔄 Nouveaux mots</button>
+        <button id="btn-copier" class="bouton-secondaire" hidden>📋 Copier</button>
+      </div>
+    </div>
+
+    <section class="filtres">
+      <h2>Catégories</h2>
+      <div class="cases" id="cases-categories"></div>
+    </section>
+
+    <section class="historique" id="bloc-historique" hidden>
+      <h2>Consignes récentes</h2>
+      <ul id="liste-historique"></ul>
+    </section>
+
+    <footer class="pied">
+      <p>Inspiré des jeux oulipiens — 100 % hors-ligne, aucune donnée collectée.</p>
+    </footer>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
